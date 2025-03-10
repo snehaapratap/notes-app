@@ -9,12 +9,10 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 
-# Install app dependencies
+
 RUN pip install mysqlclient
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /app/backend
 
 EXPOSE 8000
-#RUN python manage.py migrate
-#RUN python manage.py makemigrations
